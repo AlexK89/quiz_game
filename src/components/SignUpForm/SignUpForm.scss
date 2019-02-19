@@ -1,0 +1,100 @@
+.sign_up_section {
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1 1 auto;
+  transform: translate(0, -100%);
+  animation: slideIn .3s forwards linear;
+
+  &.fadeOut {
+    animation: slideOut .4s forwards linear;
+  }
+
+  form {
+    width: 100%;
+
+    fieldset {
+      border: none;
+      display: flex;
+      flex-direction: column;
+      color: #3564eb;
+      font-weight: 500;
+      margin-top: 1em;
+
+      &:last-child {
+        button {
+          padding: .5em;
+          font-size: 1.2em;
+          font-weight: 500;
+          border-radius: 25px;
+          width: 80%;
+          display: block;
+          margin: 0 auto;
+          border: none;
+          background-color: #3564eb;
+          color: #fff;
+          outline: none;
+          box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+          transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+          &:hover {
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.25), 0 6px 6px rgba(0,0,0,0.22);
+
+            &:active {
+              box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            }
+          }
+        }
+      }
+
+      input {
+        width: 100%;
+        font-size: 1em;
+        padding: 0.7em 0;
+        border: none;
+        border-bottom: 1px solid #ddd;
+        font-weight: bold;
+        outline: none;
+      }
+    }
+  }
+
+  .btn_wrapper {
+    font-weight: 500;
+
+    button {
+      border: none;
+      text-decoration: none;
+      color: #fff;
+      background-color: #3564eb;
+      border-radius: 50%;
+      height: 40px;
+      width: 40px;
+      font-size: 2em;
+      transform: rotate(90deg);
+      position: relative;
+      padding: 0;
+      margin: 0;
+      outline: none;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+      &:hover {
+        cursor: pointer;
+        background-color: #2649ab;
+      }
+
+      img {
+        pointer-events: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 50%;
+        transform: translate(-50%, -50%) rotate(-90deg);
+      }
+    }
+  }
+}

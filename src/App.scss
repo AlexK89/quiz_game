@@ -1,0 +1,32 @@
+@keyframes slideIn {
+   0% {
+     transform: translate(0, 100%);
+     opacity: 0;
+   }
+   100% {
+     transform: translate(0, 0);
+     opacity: 1;
+   }
+ }
+
+@keyframes slideOut {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 100%);
+    opacity: 0;
+  }
+}
+
+.App {
+  height: 823px;
+  width: 411px;
+  margin: 0 auto;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
