@@ -1,17 +1,19 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import './Categories.scss';
 
 class Categories extends React.Component {
+
+    clickHandler = () => {
+        this.props.goBackHandler();
+        this.props.history.push('/')
+    };
+
     render() {
-        return(
-            <div>
-                <ReactCSSTransitionGroup
-                    transitionName="fade"
-                    transitionEnterTimeout={500}
-                    transitionLeaveTimeout={300}>
-                    <h1>hello</h1>
-                </ReactCSSTransitionGroup>
+        return (
+            <div className={'test'}>
+                <h1>hello</h1>
+                <button onClick={this.clickHandler}>Back</button>
             </div>
         )
     }

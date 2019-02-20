@@ -7,14 +7,6 @@ import SignUpForm from '../../components/SignUpForm/SignUpForm';
 import './LoginPage.scss';
 
 class LoginPage extends React.Component {
-    fadeOut = (event, route) => {
-        const signUpSection = event.target.parentNode.parentNode;
-        signUpSection.classList.add('fadeOut');
-        setTimeout(() => {
-            this.props.history.push(route)
-        }, 400);
-    };
-
     render() {
         return (
             <div className="login_page">
@@ -28,10 +20,10 @@ class LoginPage extends React.Component {
 
                 <Switch>
                     <Route exact path={'/'} component={() => {
-                        return <LoginForm fadeOut={this.fadeOut}/>
+                        return <LoginForm goForwardHandler={this.props.goForwardHandler}/>
                     }}/>
                     <Route exact path={'/signup'} component={() => {
-                        return <SignUpForm fadeOut={this.fadeOut}/>
+                        return <SignUpForm goForwardHandler={this.props.goForwardHandler} goBackHandler={this.props.goBackHandler}/>
                     }}/>
                 </Switch>
 

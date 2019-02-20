@@ -1,24 +1,76 @@
-@keyframes slideIn {
-   0% {
-     transform: translate(0, 100%);
-     opacity: 0;
-   }
-   100% {
-     transform: translate(0, 0);
-     opacity: 1;
-   }
- }
+// Components Animation
 
-@keyframes slideOut {
-  0% {
-    transform: translate(0, 0);
-    opacity: 1;
-  }
-  100% {
-    transform: translate(0, 100%);
-    opacity: 0;
-  }
+//Move To left
+.oldSlideToLeft .slideToLeft-enter {
+  transform: translate(calc(100% - 5px), 0);
 }
+.oldSlideToLeft .slideToLeft-enter-active {
+  transition: 300ms ease-in;
+  transform: translate(0, 0);
+}
+.oldSlideToLeft div.slideToRight-exit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  opacity: 1;
+  width: 100%;
+  transform: translate(0, 0);
+}
+.oldSlideToLeft div.slideToRight-exit-active {
+  opacity: 0;
+  z-index: 10;
+  transform: translate(-100%, 0);
+  transition: 300ms ease-in;
+}
+// =============================
+
+// Initial load Fix
+
+.oldSlideToLeft div.slideToLeft-exit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  opacity: 1;
+  width: 100%;
+  transform: translate(0, 0);
+}
+.oldSlideToLeft div.slideToLeft-exit-active {
+  opacity: 0;
+  z-index: 10;
+  transform: translate(-100%, 0);
+  transition: 300ms ease-in;
+}
+// =============================
+
+// Move to right
+.oldSlideToRight .slideToRight-enter {
+  transform: translate(calc(-100% + 5px), 0);
+}
+
+.oldSlideToRight .slideToRight-enter-active {
+  transition: 300ms ease-in;
+  transform: translate(0, 0);
+}
+
+.oldSlideToRight div.slideToLeft-exit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  z-index: 10;
+  width: 100%;
+  transform: translate(0, 0);
+}
+
+.oldSlideToRight div.slideToLeft-exit-active {
+  z-index: 10;
+  opacity: 0;
+  transform: translate(100%, 0);
+  transition: 300ms ease-in;
+}
+// ========================
 
 .App {
   height: 823px;

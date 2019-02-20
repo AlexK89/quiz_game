@@ -1,11 +1,18 @@
 import React from 'react';
-
+import {withRouter} from "react-router-dom";
 import './SignUpForm.scss';
 
 class SignUpForm extends React.Component {
 
     submitSignup = (event) => {
         event.preventDefault();
+        this.props.goForwardHandler();
+        this.props.history.push('/categories')
+    };
+
+    toLoginHandler = () => {
+        this.props.goBackHandler();
+        this.props.history.push('/');
     };
 
     render() {
@@ -26,14 +33,14 @@ class SignUpForm extends React.Component {
                     </fieldset>
                     <fieldset>
                         <label htmlFor="signup_password_repeat">Repeat password</label>
-                        <input type="password" name={'password_repeat'} id={'signup_password'}/>
+                        <input type="password" name={'password_repeat'} id={'signup_password_repeat'}/>
                     </fieldset>
                     <fieldset>
                         <button type={'submit'}>Login</button>
                     </fieldset>
                 </form>
                 <div className="btn_wrapper">
-                    <button onClick={(event) => this.props.fadeOut(event, '/')}>
+                    <button onClick={this.toLoginHandler}>
                         <img src={require('../../images/back_icon.svg')} alt="back icon"/>
                     </button>
                 </div>
@@ -42,4 +49,4 @@ class SignUpForm extends React.Component {
     }
 }
 
-export default SignUpForm;
+export default withRouter(SignUpForm);

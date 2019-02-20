@@ -6,8 +6,13 @@ class LoginForm extends React.Component {
 
     submitLogin = (event) => {
         event.preventDefault();
-
+        this.props.goForwardHandler();
         this.props.history.push('/categories')
+    };
+
+    toSignupHandler = () => {
+        this.props.goForwardHandler();
+        this.props.history.push('/signup');
     };
 
     render() {
@@ -26,7 +31,7 @@ class LoginForm extends React.Component {
                         <button type={'submit'}>Login</button>
                     </fieldset>
                 </form>
-                <p className="login_section__sign_up_link">Need an account? <button onClick={(event) => this.props.fadeOut(event, '/signup')}> Sign up </button></p>
+                <p className="login_section__sign_up_link">Need an account? <button onClick={this.toSignupHandler}> Sign up </button></p>
             </div>
         )
     }

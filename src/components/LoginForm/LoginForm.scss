@@ -5,11 +5,11 @@
   justify-content: space-between;
   align-items: center;
   flex: 1 1 auto;
-  transform: translate(0, -100%);
-  animation: slideIn .3s forwards linear;
+  //transform: translate(0, -100%);
+  //animation: slideInVertically .3s forwards linear;
 
   &.fadeOut {
-    animation: slideOut .4s forwards linear;
+    animation: slideOutVertically .4s forwards linear;
   }
 
   form {
@@ -22,6 +22,7 @@
       color: #3564eb;
       font-weight: 500;
       margin-top: 2em;
+      padding: 0;
 
       &:last-child {
         button {
