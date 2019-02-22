@@ -26,7 +26,7 @@ class App extends Component {
                 return (
                     <div className="App">
                         <TransitionGroup className={`App ${oldPageClass}`}>
-                            <CSSTransition key={location.key} timeout={300} classNames={newPageClass}>
+                            <CSSTransition key={location.key} timeout={200} classNames={newPageClass}>
                                 <Switch location={location}>
                                     <Route exact path={'/categories'} component={() => {
                                         return <Categories goBackHandler={this.goBackHandler}/>

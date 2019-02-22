@@ -2,11 +2,15 @@
 
 //Move To left
 .oldSlideToLeft .slideToLeft-enter {
-  transform: translate(calc(100% - 5px), 0);
+  -webkit-transform: translateX(calc(100% - 5px));
+  transform: translateX(calc(100% - 5px));
+  will-change: transform;
 }
 .oldSlideToLeft .slideToLeft-enter-active {
-  transition: 300ms ease-in;
-  transform: translate(0, 0);
+  transition: 200ms linear;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  will-change: transform;
 }
 .oldSlideToLeft div.slideToRight-exit {
   position: absolute;
@@ -15,13 +19,17 @@
   z-index: 10;
   opacity: 1;
   width: 100%;
-  transform: translate(0, 0);
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  will-change: transform;
 }
 .oldSlideToLeft div.slideToRight-exit-active {
   opacity: 0;
   z-index: 10;
-  transform: translate(-100%, 0);
-  transition: 300ms ease-in;
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  transition: 200ms linear;
+  will-change: transform;
 }
 // =============================
 
@@ -34,24 +42,32 @@
   z-index: 10;
   opacity: 1;
   width: 100%;
-  transform: translate(0, 0);
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  will-change: transform;
 }
 .oldSlideToLeft div.slideToLeft-exit-active {
   opacity: 0;
   z-index: 10;
-  transform: translate(-100%, 0);
-  transition: 300ms ease-in;
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  transition: 200ms linear;
+  will-change: transform;
 }
 // =============================
 
 // Move to right
 .oldSlideToRight .slideToRight-enter {
-  transform: translate(calc(-100% + 5px), 0);
+  -webkit-transform: translateX(calc(-100% + 5px));
+  transform: translateX(calc(-100% + 5px));
+  will-change: transform;
 }
 
 .oldSlideToRight .slideToRight-enter-active {
-  transition: 300ms ease-in;
-  transform: translate(0, 0);
+  transition: 200ms linear;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  will-change: transform;
 }
 
 .oldSlideToRight div.slideToLeft-exit {
@@ -61,14 +77,18 @@
   opacity: 1;
   z-index: 10;
   width: 100%;
-  transform: translate(0, 0);
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  will-change: transform;
 }
 
 .oldSlideToRight div.slideToLeft-exit-active {
   z-index: 10;
   opacity: 0;
-  transform: translate(100%, 0);
-  transition: 300ms ease-in;
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  will-change: transform;
+  transition: 200ms linear;
 }
 // ========================
 
